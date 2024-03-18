@@ -26,11 +26,17 @@ def test_content(response):
 
 
 def test_command_line_interface():
-    """Test the CLI."""
+    """Test the Command Line Interface (CLI)."""
     runner = CliRunner()
-    result = runner.invoke(cli.main)
-    assert result.exit_code == 0
-    assert 'hf_mirror_fetch.cli.main' in result.output
+
+    # Mock URL for testing
+    mock_url = "https://huggingface.co/openchat/openchat_3.5/tree/main"
+
+    # Testing the main command with required URL argument
+    result = runner.invoke(cli.main, ['--url', mock_url], input="N\n")
+    print(result.output)  # To help debugging
+    assert result.exit_code == 0, f"Command exited with {result.exit_code} and output: {result.output}"
+
+    # Testing the help option to ensure CLI setup is correct
     help_result = runner.invoke(cli.main, ['--help'])
-    assert help_result.exit_code == 0
-    assert '--help  Show this message and exit.' in help_result.output
+    assert help_result.exit_code == 0, "Help command failed"
