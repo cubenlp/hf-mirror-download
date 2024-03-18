@@ -14,10 +14,12 @@ pip install hf-mirror-fetch
 
 ## 使用方法
 
-使用 `hf-mirror-fetch` 下载模型非常简单，只需要提供模型页面的 URL 即可。以下是一个使用示例：
+使用 `hf-mirror-fetch` 下载模型非常简单，只需要提供模型页面的 URL 即可。以下是使用示例：
 
 ```bash
 hfmf -u https://huggingface.co/openchat/openchat_3.5/tree/main
+hfmf -u https://huggingface.co/openchat/openchat_3.5
+hfmf -u openchat/openchat_3.5
 ```
 
 ### 参数说明

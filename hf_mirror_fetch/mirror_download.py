@@ -100,11 +100,6 @@ def download_from_mirror_page(URL, tgt_folder=None, update=True):
         tgt_folder: Save path. Defaults to None.
         update: If the repository is updated, update all files except the weights. Defaults to True. || todo: wget -c seems to already implement this functionality
     """
-    # Check and modify URL if necessary
-    if not URL.startswith(ROOT):
-        assert URL.startswith("https://huggingface.co"), "make sure download from hf-mirror.com or huggingface.com"
-        URL = URL.replace("huggingface.co", "hf-mirror.com")
-
     # Parse all file links and names from the URL
     url2names = get_url2names(URL)
 
