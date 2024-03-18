@@ -4,11 +4,10 @@
 
 from setuptools import setup, find_packages
 
-with open('README.rst') as readme_file:
-    readme = readme_file.read()
+VERSION = "0.1.0"
 
-with open('HISTORY.rst') as history_file:
-    history = history_file.read()
+with open('README.md') as readme_file:
+    readme = readme_file.read()
 
 requirements = ['Click>=7.0', ]
 
@@ -36,7 +35,7 @@ setup(
     },
     install_requires=requirements,
     license="MIT license",
-    long_description=readme + '\n\n' + history,
+    long_description=readme,
     include_package_data=True,
     keywords='hf_mirror_fetch',
     name='hf_mirror_fetch',
@@ -44,6 +43,6 @@ setup(
     test_suite='tests',
     tests_require=test_requirements,
     url='https://github.com/Qing25/hf_mirror_fetch',
-    version='0.1.0',
+    version=VERSION,
     zip_safe=False,
 )
