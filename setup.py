@@ -9,7 +9,11 @@ VERSION = "0.1.0"
 with open('README.md') as readme_file:
     readme = readme_file.read()
 
-requirements = ['Click>=7.0', ]
+requirements = [
+    'Click>=7.0',
+    'requests',
+    'beautifulsoup4'
+]
 
 test_requirements = ['pytest>=3', ]
 
@@ -30,7 +34,7 @@ setup(
     description="A command-line tool designed to streamline the process of downloading machine learning models and related files from the Hugging Face model hub mirror site.",
     entry_points={
         'console_scripts': [
-            'hf_mirror_fetch=hf_mirror_fetch.cli:main',
+            'hfmf=hf_mirror_fetch.cli:main',
         ],
     },
     install_requires=requirements,
